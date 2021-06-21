@@ -1,0 +1,7 @@
+//%attributes = {}
+C_TEXT:C284($0)
+<<<<<<< .merge_file_TeWLwe
+$0:="Hello from MyMethod 7 Changed"
+=======
+$0:="Hello from MyMethod 7 alter"
+>>>>>>> .merge_file_oucQ8s

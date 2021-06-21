@@ -1,0 +1,1073 @@
+﻿{
+	"destination": "detailScreen",
+	"windowSizingX": "fixed",
+	"windowMinHeight": 720,
+	"windowMaxHeight": 32000,
+	"width": 920,
+	"height": 720,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 16,
+					"left": 20,
+					"width": 880,
+					"height": 680,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Text7": {
+					"type": "text",
+					"top": 859,
+					"left": 30,
+					"width": 920,
+					"height": 40,
+					"sizingX": "grow",
+					"textAlign": "center",
+					"fontFamily": "System Font",
+					"fontSize": 14,
+					"fontWeight": "bold",
+					"text": "In this part you will learn how to query the DataStore"
+				},
+				"information4": {
+					"type": "input",
+					"top": 294,
+					"left": 60,
+					"width": 800,
+					"height": 180,
+					"sizingX": "grow",
+					"dataSource": "_Descriptions{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"information3": {
+					"type": "input",
+					"top": 75,
+					"left": 60,
+					"width": 818,
+					"height": 193,
+					"sizingX": "grow",
+					"dataSource": "mainDescription",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"HDIpicture": {
+					"type": "picture",
+					"top": 490,
+					"left": 280,
+					"width": 320,
+					"height": 180,
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Images/MCD.png"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information1": {
+					"type": "input",
+					"top": 60,
+					"left": 35,
+					"width": 810,
+					"height": 130,
+					"sizingX": "grow",
+					"dataSource": "_Descriptions{2}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"listBoxSave": {
+					"type": "listbox",
+					"top": 220,
+					"left": 60,
+					"width": 415,
+					"height": 121,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "20px",
+					"dataSource": "Form:C1466.contacts",
+					"currentItemSource": "Form:C1466.selectedContact",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"method": "ObjectMethods/listBoxSave.4dm",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Column1",
+							"dataSource": "This:C1470.firstName",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header1",
+								"text": "First name"
+							},
+							"footer": {
+								"name": "Footer1",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column2",
+							"dataSource": "This:C1470.lastName",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header2",
+								"text": "Last name"
+							},
+							"footer": {
+								"name": "Footer2",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Text6": {
+					"type": "text",
+					"top": 200,
+					"left": 60,
+					"width": 190,
+					"height": 20,
+					"fontWeight": "bold",
+					"text": "List of contacts"
+				},
+				"UpdateButton": {
+					"type": "button",
+					"top": 400,
+					"left": 735,
+					"width": 100,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Update",
+					"focusable": false,
+					"method": "ObjectMethods/UpdateButton.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"updateContactMessageOKText": {
+					"type": "text",
+					"top": 441,
+					"left": 60,
+					"width": 280,
+					"height": 19,
+					"sizingY": "move",
+					"stroke": "#008000",
+					"fontWeight": "bold",
+					"text": "The update action was successful"
+				},
+				"Button2": {
+					"type": "button",
+					"top": 560,
+					"left": 735,
+					"width": 100,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Create",
+					"focusable": false,
+					"method": "ObjectMethods/Button2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Text11": {
+					"type": "text",
+					"top": 525,
+					"left": 60,
+					"width": 290,
+					"height": 15,
+					"sizingY": "move",
+					"fontWeight": "bold",
+					"text": "Create a new contact"
+				},
+				"createMessageOKText": {
+					"type": "text",
+					"top": 601,
+					"left": 60,
+					"width": 280,
+					"height": 18,
+					"sizingY": "move",
+					"stroke": "#008000",
+					"fontWeight": "bold",
+					"text": "The create action was successful"
+				},
+				"Text18": {
+					"type": "text",
+					"top": 369,
+					"left": 60,
+					"width": 290,
+					"height": 15,
+					"sizingY": "move",
+					"fontWeight": "bold",
+					"text": "Select a contact and update it"
+				},
+				"Line2": {
+					"type": "line",
+					"top": 388,
+					"left": 60,
+					"width": 775,
+					"sizingY": "move",
+					"stroke": "#696969"
+				},
+				"Line3": {
+					"type": "line",
+					"top": 545,
+					"left": 60,
+					"width": 775,
+					"sizingY": "move",
+					"stroke": "#696969"
+				},
+				"Text10": {
+					"type": "text",
+					"top": 351,
+					"left": 290,
+					"width": 133,
+					"height": 19,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Number of contacts:"
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 348,
+					"left": 425,
+					"width": 50,
+					"height": 22,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contacts.length",
+					"focusable": false,
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Variable3": {
+					"type": "input",
+					"top": 400,
+					"left": 134,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contactToSave.firstName",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text12": {
+					"type": "text",
+					"top": 400,
+					"left": 34,
+					"width": 90,
+					"height": 20,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "First name"
+				},
+				"Variable4": {
+					"type": "input",
+					"top": 400,
+					"left": 371,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contactToSave.lastName",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Variable6": {
+					"type": "input",
+					"top": 560,
+					"left": 134,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contactToCreate.firstName",
+					"dragging": "none",
+					"dropping": "custom"
+				},
+				"Variable7": {
+					"type": "input",
+					"top": 560,
+					"left": 371,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contactToCreate.lastName",
+					"dragging": "none",
+					"dropping": "custom"
+				},
+				"Text13": {
+					"type": "text",
+					"top": 560,
+					"left": 34,
+					"width": 90,
+					"height": 20,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "First name"
+				},
+				"Text14": {
+					"type": "text",
+					"top": 563,
+					"left": 290,
+					"width": 69,
+					"height": 17,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Last name"
+				},
+				"Text15": {
+					"type": "text",
+					"top": 403,
+					"left": 290,
+					"width": 69,
+					"height": 17,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Last name"
+				},
+				"Check Box2": {
+					"type": "checkbox",
+					"top": 671,
+					"left": 34,
+					"width": 80,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "btnTrace",
+					"text": "Trace",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"information2": {
+					"type": "input",
+					"top": 60,
+					"left": 35,
+					"width": 810,
+					"height": 130,
+					"sizingX": "grow",
+					"dataSource": "_Descriptions{3}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"listBoxSaveWithCompany": {
+					"type": "listbox",
+					"top": 220,
+					"left": 60,
+					"width": 615,
+					"height": 120,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "20px",
+					"dataSource": "Form:C1466.contacts",
+					"currentItemSource": "Form:C1466.selectedContact",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"method": "ObjectMethods/listBoxSaveWithCompany.4dm",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Column5",
+							"dataSource": "This:C1470.firstName",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header4",
+								"text": "First name"
+							},
+							"footer": {
+								"name": "Footer3",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column6",
+							"dataSource": "This:C1470.lastName",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header5",
+								"text": "Last name"
+							},
+							"footer": {
+								"name": "Footer4",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column7",
+							"dataSource": "This:C1470.company.name",
+							"width": 200,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header6",
+								"text": "Company"
+							},
+							"footer": {
+								"name": " 1",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Text1": {
+					"type": "text",
+					"top": 200,
+					"left": 60,
+					"width": 190,
+					"height": 20,
+					"fontWeight": "bold",
+					"text": "List of contacts"
+				},
+				"Variable5": {
+					"type": "input",
+					"top": 400,
+					"left": 134,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contactToSave.firstName",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text2": {
+					"type": "text",
+					"top": 400,
+					"left": 34,
+					"width": 90,
+					"height": 20,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "First name"
+				},
+				"Variable15": {
+					"type": "input",
+					"top": 400,
+					"left": 371,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contactToSave.lastName",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"UpdateWithCompanyButton": {
+					"type": "button",
+					"top": 510,
+					"left": 735,
+					"width": 100,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Update",
+					"focusable": false,
+					"method": "ObjectMethods/UpdateWithCompanyButton.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"updateContactMessageOKText1": {
+					"type": "text",
+					"top": 478,
+					"left": 60,
+					"width": 280,
+					"height": 20,
+					"sizingY": "move",
+					"stroke": "#008000",
+					"fontWeight": "bold",
+					"text": "The update action was successful"
+				},
+				"Button1": {
+					"type": "button",
+					"top": 670,
+					"left": 735,
+					"width": 100,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Create",
+					"focusable": false,
+					"method": "ObjectMethods/Button1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Text22": {
+					"type": "text",
+					"top": 525,
+					"left": 60,
+					"width": 290,
+					"height": 15,
+					"sizingY": "move",
+					"fontWeight": "bold",
+					"text": "Create a new contact"
+				},
+				"Variable18": {
+					"type": "input",
+					"top": 560,
+					"left": 134,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contactToCreate.firstName",
+					"dragging": "none",
+					"dropping": "custom"
+				},
+				"Variable19": {
+					"type": "input",
+					"top": 560,
+					"left": 371,
+					"width": 150,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contactToCreate.lastName",
+					"dragging": "none",
+					"dropping": "custom"
+				},
+				"createMessageOKText1": {
+					"type": "text",
+					"top": 643,
+					"left": 60,
+					"width": 280,
+					"height": 20,
+					"sizingY": "move",
+					"stroke": "#008000",
+					"fontWeight": "bold",
+					"text": "The create action was successful"
+				},
+				"Text29": {
+					"type": "text",
+					"top": 369,
+					"left": 60,
+					"width": 290,
+					"height": 15,
+					"sizingY": "move",
+					"fontWeight": "bold",
+					"text": "Select a contact and update it"
+				},
+				"Line1": {
+					"type": "line",
+					"top": 388,
+					"left": 60,
+					"width": 775,
+					"sizingY": "move",
+					"stroke": "#696969"
+				},
+				"Line4": {
+					"type": "line",
+					"top": 545,
+					"left": 60,
+					"width": 775,
+					"sizingY": "move",
+					"stroke": "#696969"
+				},
+				"Text30": {
+					"type": "text",
+					"top": 351,
+					"left": 490,
+					"width": 133,
+					"height": 17,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Number of contacts:"
+				},
+				"Variable24": {
+					"type": "input",
+					"top": 348,
+					"left": 625,
+					"width": 50,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contacts.length",
+					"focusable": false,
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"Text33": {
+					"type": "text",
+					"top": 560,
+					"left": 34,
+					"width": 90,
+					"height": 20,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "First name"
+				},
+				"Text34": {
+					"type": "text",
+					"top": 560,
+					"left": 290,
+					"width": 69,
+					"height": 17,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Last name"
+				},
+				"Text3": {
+					"type": "text",
+					"top": 400,
+					"left": 513,
+					"width": 130,
+					"height": 20,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Select a company"
+				},
+				"listBoxCompaniesForUpdate": {
+					"type": "listbox",
+					"top": 400,
+					"left": 649,
+					"width": 186,
+					"height": 100,
+					"sizingY": "move",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "20px",
+					"dataSource": "Form:C1466.companiesForUpdate",
+					"currentItemSource": "Form:C1466.selectedCompanyForUpdate",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Column3",
+							"dataSource": "This:C1470.name",
+							"width": 171,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header3",
+								"text": "Companies"
+							},
+							"footer": {
+								"name": "Footer9",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"listBoxCompaniesForCreate": {
+					"type": "listbox",
+					"top": 560,
+					"left": 649,
+					"width": 186,
+					"height": 100,
+					"sizingY": "move",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "20px",
+					"dataSource": "Form:C1466.companiesForCreate",
+					"currentItemSource": "Form:C1466.selectedCompanyForCreate",
+					"selectionMode": "single",
+					"scrollbarHorizontal": "automatic",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Column4",
+							"dataSource": "This:C1470.name",
+							"width": 171,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header7",
+								"text": "Companies"
+							},
+							"footer": {
+								"name": "Footer10",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Text9": {
+					"type": "text",
+					"top": 560,
+					"left": 513,
+					"width": 130,
+					"height": 20,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Select a company"
+				},
+				"Text4": {
+					"type": "text",
+					"top": 403,
+					"left": 290,
+					"width": 69,
+					"height": 17,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Last name"
+				},
+				"Check Box1": {
+					"type": "checkbox",
+					"top": 671,
+					"left": 34,
+					"width": 80,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "btnTrace",
+					"text": "Trace",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Text5": {
+					"type": "text",
+					"top": 200,
+					"left": 60,
+					"width": 190,
+					"height": 17,
+					"fontWeight": "bold",
+					"text": "List of contacts"
+				},
+				"DropContactsButton": {
+					"type": "button",
+					"top": 430,
+					"left": 60,
+					"width": 130,
+					"height": 20,
+					"sizingY": "move",
+					"text": "Drop contact(s)",
+					"focusable": false,
+					"method": "ObjectMethods/DropContactsButton.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"dropContactMessageOKText": {
+					"type": "text",
+					"top": 558,
+					"left": 60,
+					"width": 280,
+					"height": 17,
+					"sizingY": "move",
+					"stroke": "#008000",
+					"fontWeight": "bold",
+					"text": "The drop contact action was successful"
+				},
+				"listBoxDrop1": {
+					"type": "listbox",
+					"top": 220,
+					"left": 60,
+					"width": 615,
+					"height": 121,
+					"sizingY": "grow",
+					"resizingMode": "legacy",
+					"listboxType": "collection",
+					"focusable": false,
+					"hideFocusRing": true,
+					"movableRows": false,
+					"rowHeight": "20px",
+					"headerHeight": "20px",
+					"dataSource": "Form:C1466.contacts",
+					"currentItemSource": "Form:C1466.contactToDelete",
+					"selectedItemsSource": "Form:C1466.contactsListToDelete",
+					"scrollbarHorizontal": "automatic",
+					"method": "ObjectMethods/listBoxDrop1.4dm",
+					"events": [
+						"onClick",
+						"onSelectionChange"
+					],
+					"columns": [
+						{
+							"name": "Column15",
+							"dataSource": "This:C1470.firstName",
+							"width": 150,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header14",
+								"text": "First name"
+							},
+							"footer": {
+								"name": "Footer7",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column16",
+							"dataSource": "This:C1470.lastName",
+							"width": 150,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header15",
+								"text": "Last name"
+							},
+							"footer": {
+								"name": "Footer8",
+								"timeFormat": "hh_mm_ss"
+							}
+						},
+						{
+							"name": "Column17",
+							"dataSource": "This:C1470.company.name",
+							"width": 300,
+							"minWidth": 10,
+							"maxWidth": 32000,
+							"events": [
+								"onClick",
+								"onDataChange"
+							],
+							"header": {
+								"name": "Header16",
+								"text": "Company"
+							},
+							"footer": {
+								"name": " 7",
+								"timeFormat": "hh_mm_ss"
+							}
+						}
+					]
+				},
+				"Check Box3": {
+					"type": "checkbox",
+					"top": 671,
+					"left": 34,
+					"width": 80,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "btnTrace",
+					"text": "Trace",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"information5": {
+					"type": "input",
+					"top": 60,
+					"left": 35,
+					"width": 810,
+					"height": 130,
+					"sizingX": "grow",
+					"dataSource": "_Descriptions{4}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"updateContactButton2Direction1": {
+					"type": "input",
+					"top": 430,
+					"left": 200,
+					"width": 500,
+					"height": 113,
+					"sizingY": "move",
+					"dataSource": "_Directions{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom"
+				},
+				"Text8": {
+					"type": "text",
+					"top": 351,
+					"left": 490,
+					"width": 133,
+					"height": 17,
+					"sizingY": "move",
+					"textAlign": "right",
+					"text": "Number of contacts:"
+				},
+				"Variable2": {
+					"type": "input",
+					"top": 348,
+					"left": 625,
+					"width": 50,
+					"height": 20,
+					"sizingY": "move",
+					"dataSource": "Form:C1466.contacts.length",
+					"focusable": false,
+					"enterable": false,
+					"dragging": "none",
+					"dropping": "none"
+				},
+				"updateContactButton2Direction2": {
+					"type": "input",
+					"top": 380,
+					"left": 60,
+					"width": 600,
+					"height": 30,
+					"sizingY": "move",
+					"dataSource": "_Directions{2}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom"
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}
